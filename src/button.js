@@ -11,21 +11,6 @@ export default class Button extends Component  {
     }
 
 
-    static propTypes = {
-        color      : PropTypes.string,
-        tag        : PropTypes.string,
-        onClick    : PropTypes.func,
-        disabled   : PropTypes.bool
-    };
-
-    static get defaultProps() {
-        return {
-            color    : 'primary',
-            tag      : 'button',
-            disabled : false
-        };
-    }
-
     onClick(event) {
         if (this.props.disabled) {
             event.preventDefault();
@@ -63,4 +48,20 @@ export default class Button extends Component  {
         );
     }
 
+};
+
+
+Button.propTypes = {
+    color      : PropTypes.string,
+    tag        : PropTypes.string,
+    onClick    : PropTypes.func,
+    disabled   : PropTypes.bool
+};
+
+
+
+Button.defaultProps = {
+    color    : 'primary',
+    tag      : 'button',
+    disabled : false
 };
