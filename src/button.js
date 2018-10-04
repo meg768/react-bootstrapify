@@ -25,7 +25,8 @@ export default class Button extends Component  {
 
     render() {
 
-        var {className, color, ...props} = this.props;
+        var className = '';
+        var color = 'secondary';
 
         className = classNames(className, 'btn');
         className = classNames(className, {[`btn-${color}`]:color});
@@ -33,7 +34,7 @@ export default class Button extends Component  {
 
 
         return (
-            <button {...props} className={className} onClick={this.onClick}>
+            <button className={className} onClick={this.onClick}>
                 {this.props.children}
             </button>
 
