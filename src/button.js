@@ -25,25 +25,17 @@ export default class Button extends Component  {
 
     render() {
 
-        var {tag : Tag, className, color, ...props} = this.props;
+        var {className, color, ...props} = this.props;
 
         className = classNames(className, 'btn');
         className = classNames(className, {[`btn-${color}`]:color});
 
 
-        if (!Tag) {
-            Tag = props.href ? 'a' : 'button';
-        }
-
-        // If a href is given and tag is 'button', replace with 'a'
-        if (props.href && Tag === 'button') {
-            Tag = 'a';
-        }
 
         return (
-            <Tag {...props} className={className} onClick={this.onClick}>
+            <button {...props} className={className} onClick={this.onClick}>
                 {this.props.children}
-            </Tag>
+            </button>
 
         );
     }
